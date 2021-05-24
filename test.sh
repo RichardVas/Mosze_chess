@@ -4,7 +4,7 @@ rm -f output.txt
 
 ./a.out >> output.txt
 
-diff --strip-trailing-cr output.txt exp_output.txt
+diff --strip-trailing-cr output.txt expected_output.txt
 
 if [ $? -eq 0 ]
 then
