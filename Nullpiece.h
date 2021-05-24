@@ -8,27 +8,11 @@ class Nullpiece : public Piece {
 public:
 	Nullpiece(int x_pos, int y_pos) : Piece(x_pos,y_pos,"Null") {}
 	~Nullpiece() {}
-	//virtual void move(int dest_x, int dest_y) {
-	//	setX(dest_x);
-	//	setY(dest_y);
-
-	//}
-	//int getX()
-	//{
-	//	return curr_x;
-	//}
-	//int getY()
-	//{
-	//	return curr_y;
-	//}
-	//virtual std::string toString() {
-	//	std::string str = "";
-	//	str += "Nullpiece's position: " + std::to_string(this->getX()) + ' ' + std::to_string(this->getY());
-	//	return str;
-	//}
+	void Abstract() { return; }
 	virtual std::string toString() {
 		std::string str = "\t";
 		
 		return str;
 	}
+	bool checkMove(int dest_x, int dest_y) { return false; }
 };

@@ -1,8 +1,7 @@
-#include "Piece.h"
-#include "King.h"
-#include "Board.h"
-#include <iostream>
 
+#include "Game.h"
+#include <iostream>
+#include "JSON.h"
 /*
 JSON BEOLVAS
 Exception kezelés
@@ -20,44 +19,107 @@ külön könyvtár - külön cpp
 sáncolás, döntetlen, ha marad idõ
 */
 
-int main()
+/*FEJLESZTÉSI ÖTLET: argumentumként adjak egy input.txt-t ha nem üres akkor olvassa be a lépéseket
+ellenkezõ esetben kérjen inputokat és akkor az inputok lehetnének json formátumban, ezzel is okot adva az
+olvasó könyvtár megírásának
+*/
+int main(int argc, char* argv[])
 {
-	//Piece *elso = new King(69, 420);
-	//std::string output = elso->toString();
+	//for (int i = 0; i < argc; ++i)
+	//{
+	//	std::cout << argv[i] << std::endl;
+	//}
 
-	Board *pelda = new Board();
 
-//	std::cout << output << std::endl;
-	pelda->setup();
-	pelda->toString();
 
-	std::cout<<"Tabla kirajzolasa" << std::endl;
-	/*algortimus: minden paros sorban, minden paros elem fehér*/
+//	auto steps_from_file = JSON::parseJson(argv[1]);
+	Game *ujgame = new Game();
+
+	/*algortimus: minden paros sorban, minden paros elem feher*/
 	int i, j;
+	int k;
+
+	bool color = true;
+
 	for (i = 0; i < 8; ++i) {
+
+		bool color = true;
+		if (i % 2 == 0) {
+			for (k = 0; k < 8; ++k)
+				if (color) {
+					std::cout << "    ";
+					color = !color;
+				}
+				else {
+					std::cout << "####";
+					color = !color;
+				}
+		}
+		else
+			for (k = 0; k < 8; ++k)
+				if (color) {
+					std::cout << "####";
+					color = !color;
+				}
+				else {
+					std::cout << "    ";
+					color = !color;
+				}
+		std::cout << std::endl;
+			
+
 		for (j = 0; j < 8; ++j) {
-			if (i % 2 == 0) // ha a sor paros, akkor minden páros elem Fehér
+
+
+
+			if (i % 2 == 0) // ha a sor paros, akkor minden paros elem Feher
 			{
 				if (j % 2 == 0)
-					std::cout << "W ";
+				{
+					std::cout << "  W ";
+				}
 				else
-					std::cout << "B ";
+					std::cout << "# B#";
 			}
-			else //ha a sor paratlan, akkor minden paratlanodik fehér
+			else //ha a sor paratlan, akkor minden paratlanodik feher
 			{
 				if (j % 2 == 0)
-					std::cout << "B ";
+					std::cout << "# B#";
 				else
-					std::cout << "W ";
+					std::cout << "  W ";
 
 			}
-		
+			
 		}
+		std::cout << std::endl;
+		color = true;
+		if (i % 2 == 0) {
+			for (k = 0; k < 8; ++k)
+				if (color) {
+					std::cout << "    ";
+					color = !color;
+				}
+				else {
+					std::cout << "####";
+					color = !color;
+				}
+		}
+		else
+			for (k = 0; k < 8; ++k)
+				if (color) {
+					std::cout << "####";
+					color = !color;
+				}
+				else {
+					std::cout << "    ";
+					color = !color;
+				}
+		std::cout << std::endl;
+
+
 	std::cout << std::endl;
 	}
 
-//	delete elso;
-	delete pelda;
-
+	delete ujgame;
 	return 0;
 }
