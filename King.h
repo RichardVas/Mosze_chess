@@ -4,39 +4,38 @@ class King :public Piece {
 	/**
 	*
 	*/
-	//int curr_x, curr_y;
-	/*a nev egyedi minden piece-re, viszont minden piecenek van neve */
-	//const std::string name = "King";
+
 public:
 	King(int x_pos, int y_pos) : Piece(x_pos,y_pos,"King") {}
 	~King() {}
-	//virtual void move(int dest_x, int dest_y) {
-	//	setX(dest_x);
-	//	setY(dest_y);
-	//}
-	//int getX()
-	//{
-	//	return curr_x;
-	//}
-	//int getY()
-	//{
-	//	return curr_y;
-	//}
-	//virtual std::string toString() {
-	//	std::string str = "";
-	//	str += "King's position: "+std::to_string(this->getX())+' '+std::to_string(this->getY());
+	void Abstract() {return;}
+
+	//std::string toString() {
+	//	std::string str = "K";
+	//	if (this->get_isWhite())
+	//	{
+	//		str =  "WK \t";
+	//	}
+	//	else
+	//		str = "BK \t";
 	//	return str;
 	//}
 
-	std::string toString() {
-		std::string str = "K";
-		if (this->get_isWhite())
-		{
-			str = "WK \t";
+	
+	bool checkMove(int dest_x, int dest_y) {
+		/*a kiraly lephet barmilyen tablaban levo mezoben, ammenyiben az 1 egyseg tavolsagra van.*/
+		bool res = true;
+		int distance = std::abs(dest_x - getX()) + std::abs(dest_y - getY());
+		if (distance != 1){
+			res = false;
+			std::cout << "az x " << this->getX() << std::endl;
+			std::cout << "az y " << this->getY() << std::endl;
+			std::cout << "az dx " << dest_x << std::endl;
+			std::cout << "az dy " << dest_y << std::endl;
+			std::cout << res << std::endl;
 		}
-		else
-			str = "BK \t";
-		return str;
+		//move(dest_x, dest_y);
+		return res;
 	}
 	/*implementálni még megszorításokat az egyes bábukra*/
 
