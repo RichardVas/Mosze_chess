@@ -22,4 +22,5 @@ jobs:
           REPO: self
           BRANCH: gh-pages
           FOLDER: DOCS/html
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
