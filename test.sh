@@ -2,7 +2,7 @@
 
 rm -f output.txt
 
-./a.out >> output.txt
+./a.out input.json >> output.txt
 
 diff --strip-trailing-cr output.txt expected_output.txt
 
