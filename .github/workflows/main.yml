@@ -12,4 +12,4 @@ jobs:
       - name: Run test
         run: ./test.sh
       - name: Diffy
-        run: diff --strip-trailing-cr output.txt exp_output.txt
+        run: diff --strip-trailing-cr output.txt expected_output.txt
