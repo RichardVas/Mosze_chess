@@ -9,10 +9,6 @@ public:
 	Nullpiece(int x_pos, int y_pos) : Piece(x_pos,y_pos,"Null") {}
 	~Nullpiece() {}
 	void Abstract() { return; }
-	virtual std::string toString() {
-		std::string str = "\t";
-		
-		return str;
-	}
+	virtual std::string toString();
 	bool checkMove(int dest_x, int dest_y) { return false; }
 };
