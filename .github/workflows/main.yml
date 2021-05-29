@@ -20,10 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     container: richardvas/mosze:latest
     steps:
-        - name: Set permission
-          run: chmod a+x ./valgrind.sh
+        - uses: actions/checkout@v2
         - name: build
-          run: g++ -Wall -g -o a.out *.cpp
+          run: make build
         - name: Checking memory leak
           run: make valgrind
   cppcheck:
