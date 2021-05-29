@@ -21,6 +21,8 @@ jobs:
     container: richardvas/mosze:latest
     steps:
         - uses: actions/checkout@v2
+        - name: build
+          run: make build
         - name: Checking memory leak
           run: make valgrind
   cppcheck:
