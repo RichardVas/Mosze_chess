@@ -9,10 +9,9 @@ on:
 jobs:
   doxygen:
     runs-on: ubuntu-latest
+    container: richardvas/mosze:latest
     steps:
       - uses: actions/checkout@v2
-      - run: sudo apt-get install doxygen
-      - run: sudo apt-get install graphviz
       - run: doxygen doxconfig
       - name: Push git subdirectory as branch
 
