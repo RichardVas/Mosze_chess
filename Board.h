@@ -24,8 +24,9 @@ public:
 		{
 			for (j = 0; j < board[i].size(); ++j)
 				delete board[i][j];
+			
 		}
-		std::cout << "memory freed\n";
+//		std::cout << "memory freed\n";
 	}
 	
 	void setup() {
@@ -39,27 +40,27 @@ public:
 			for (j = 0; j < 8; ++j)
 			{
 				if (i == 0) {
-					//Piece *haha = new King(i, j);
-					Piece *paraszt = new King(i, j);
-					paraszt->setWhite();
-					tmp.push_back(paraszt);
+
+					Piece *kiraly = new King(i, j);
+					kiraly->setWhite();
+					tmp.push_back(kiraly);
 				}
 				else if (i == 1)
 				{
-					Piece *lulul = new Pawn(i, j);
-					lulul->setWhite();
-					tmp.push_back(lulul);
+					Piece *tmp_piece = new Pawn(i, j);
+					tmp_piece->setWhite();
+					tmp.push_back(tmp_piece);
 				}
 				else if (i == 6)
 				{
-					Piece *lulul = new Pawn(i, j);
-					tmp.push_back(lulul);
+					Piece *tmp_piece = new Pawn(i, j);
+					tmp.push_back(tmp_piece);
 				}
 				else if (i == 7)
 				{
-					Piece *lulul = new King(i, j);
+					Piece *tmp_piece = new King(i, j);
 
-					tmp.push_back(lulul);
+					tmp.push_back(tmp_piece);
 				}
 				else {
 					Piece *semmi = new Nullpiece(i, j);
@@ -76,15 +77,21 @@ public:
 	/*babukat mozgato függvén*/
 	void move_piece(int px, int py, int dx, int dy) {
 		/* ha a target destination nem uresbabu, akkor azt "leuti"*/
-		if (dynamic_cast<Nullpiece*>(board[dx][dy]))
-			std::cout << "target_dest is empty";
+
+		//if (dynamic_cast<Nullpiece*>(board[dx][dy]))
+		//	std::cout << "target_dest is empty";
 		if (board[px][py] ->checkMove(dx, dy)) {
 			board[px][py] -> move(*board[px][py],dx, dy);
 	/*		std::cout << board[px][py]->getX()<<board[px][py]->getY() << std::endl;*/
 			board[dx][dy] = board[px][py];
 			//std::cout << board[dx][dy]->getX() << board[px][py]->getY() << std::endl;
+
+
 			board[px][py] = new Nullpiece(px, py);
-			std::cout << "dx, dy:" << dx << " " << dy << " mozgatva\n";
+
+			//Piece *tmp = dynamic_cast<Nullpiece*>(board[px][py]);
+
+//			std::cout << "dx, dy:" << dx << " " << dy << " mozgatva\n";
 		}
 
 
