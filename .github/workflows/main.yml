@@ -16,15 +16,7 @@ jobs:
         run: ./test.sh
       - name: Diffy
         run: diff --strip-trailing-cr output.txt expected_output.txt
-  memory_leak_test:
-    runs-on: ubuntu-latest
-    container: richardvas/mosze:latest
-    steps:
-        - uses: actions/checkout@v2
-        - name: build
-          run: make build
-        - name: Checking memory leak
-          run: make valgrind
+
   cppcheck:
     runs-on: ubuntu-latest
     container: richardvas/mosze:latest
