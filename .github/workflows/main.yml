@@ -5,11 +5,34 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: richardvas/mosze:latest
     steps:
       - uses: actions/checkout@v2
+      - name: Build
+        run: make build
       - name: Permission
         run: chmod u+r+x test.sh
       - name: Run test
         run: ./test.sh
       - name: Diffy
         run: diff --strip-trailing-cr output.txt expected_output.txt
+  memory_leak_test:
+    runs-on: ubuntu-latest
+    container: richardvas/mosze:latest
+    steps:
+        - uses: actions/checkout@v2
+        - name: build
+          run: make build
+        - name: Checking memory leak
+          run: make valgrind
+  cppcheck:
+    runs-on: ubuntu-latest
+    container: richardvas/mosze:latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Code analysis
+        run: make cppcheck
+      - name: Artifact performance-style
+        uses: actions/upload-artifact@v2
+        with:
+          path: ./cppcheck_performance.txt

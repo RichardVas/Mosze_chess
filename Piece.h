@@ -2,7 +2,7 @@
 
 #include <string>
 #include <cstdlib>
-#include<iostream>
+#include <iostream>
 
 
 
@@ -30,36 +30,12 @@ public:
 	~Piece() {}
 
 	/*pass the object as reference to make permanent changes*/
-	virtual void move(Piece& p,int dest_x, int dest_y) {
-
-			//setX(dest_x);
-			//setY(dest_y);
-		p.curr_x = dest_x;
-		p.curr_y = dest_y;
-		std::cout << "movement happened\n";
-		
-	}
+	virtual void move(Piece& p, int dest_x, int dest_y);
 	virtual void Abstract() = 0;
 	//virtual std::string toString() = 0;
 	//virtual std::string toString() = 0;
 
-	virtual std::string toString() {
-		char k = name[0];
-		std::string kezdo{ k };
-		std::string str = "";
-		if (this->get_isWhite())
-		{
-			str.append("W");
-			str.append(kezdo);
-			str.append("\t");
-		}
-		else {
-			str.append("B");
-			str.append(kezdo);
-			str.append("\t");
-		}
-		return str;
-	}
+	virtual std::string toString();
 
 	void killpiece()
 	{
