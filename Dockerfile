@@ -8,6 +8,5 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   g++ \
   doxygen \
   graphviz \
-  git \
   
 && rm -rf /var/lib/apt/lists/*

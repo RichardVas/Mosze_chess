@@ -8,5 +8,3 @@ OOP_patch
 </br> 
 https://richardvas.github.io/Mosze_chess/index.html
 </br> 
-test wf
-</br> 
