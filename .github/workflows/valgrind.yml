@@ -8,8 +8,6 @@ jobs:
     container: richardvas/mosze:latest
     steps:
         - uses: actions/checkout@v2
-        - name: Installing Valgrind
-          run: sudo apt-get install valgrind
         - name: Set permission
           run: chmod a+x ./valgrind.sh
         - name: build
