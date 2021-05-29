@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+RUN sudo apt-get update && DEBIAN_FRONTEND=noninteractive sudo apt-get install -y \
   make \
   cppcheck \
   valgrind \
