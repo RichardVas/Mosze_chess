@@ -36,89 +36,97 @@ int main(int argc, char* argv[])
 	Game *ujgame = new Game();
 
 	/*algortimus: minden paros sorban, minden paros elem feher*/
-	int i, j;
-	int k;
 
-	bool color = true;
+/*##################################################*/
+	/*integralni az alabbi kirajzolast kulon osztalyként*/
 
-	for (i = 0; i < 8; ++i) {
+	//int i, j;
+	//int k;
 
-		bool color = true;
-		if (i % 2 == 0) {
-			for (k = 0; k < 8; ++k)
-				if (color) {
-					std::cout << "    ";
-					color = !color;
-				}
-				else {
-					std::cout << "####";
-					color = !color;
-				}
-		}
-		else
-			for (k = 0; k < 8; ++k)
-				if (color) {
-					std::cout << "####";
-					color = !color;
-				}
-				else {
-					std::cout << "    ";
-					color = !color;
-				}
-		std::cout << std::endl;
-			
+	//bool color = true;
 
-		for (j = 0; j < 8; ++j) {
+	//for (i = 0; i < 8; ++i) {
 
+	//	bool color = true;
+	//	if (i % 2 == 0) {
+	//		for (k = 0; k < 8; ++k)
+	//			if (color) {
+	//				std::cout << "    ";
+	//				color = !color;
+	//			}
+	//			else {
+	//				std::cout << "####";
+	//				color = !color;
+	//			}
+	//	}
+	//	else
+	//		for (k = 0; k < 8; ++k)
+	//			if (color) {
+	//				std::cout << "####";
+	//				color = !color;
+	//			}
+	//			else {
+	//				std::cout << "    ";
+	//				color = !color;
+	//			}
+	//	std::cout << std::endl;
+	//		
 
-
-			if (i % 2 == 0) // ha a sor paros, akkor minden paros elem Feher
-			{
-				if (j % 2 == 0)
-				{
-					std::cout << "  W ";
-				}
-				else
-					std::cout << "# B#";
-			}
-			else //ha a sor paratlan, akkor minden paratlanodik feher
-			{
-				if (j % 2 == 0)
-					std::cout << "# B#";
-				else
-					std::cout << "  W ";
-
-			}
-			
-		}
-		std::cout << std::endl;
-		color = true;
-		if (i % 2 == 0) {
-			for (k = 0; k < 8; ++k)
-				if (color) {
-					std::cout << "    ";
-					color = !color;
-				}
-				else {
-					std::cout << "####";
-					color = !color;
-				}
-		}
-		else
-			for (k = 0; k < 8; ++k)
-				if (color) {
-					std::cout << "####";
-					color = !color;
-				}
-				else {
-					std::cout << "    ";
-					color = !color;
-				}
-		std::cout << std::endl;
+	//	for (j = 0; j < 8; ++j) {
 
 
-	std::cout << std::endl;
-	}
+
+	//		if (i % 2 == 0) // ha a sor paros, akkor minden paros elem Feher
+	//		{
+	//			if (j % 2 == 0)
+	//			{
+	//				std::cout << "  W ";
+	//			}
+	//			else
+	//				std::cout << "# B#";
+	//		}
+	//		else //ha a sor paratlan, akkor minden paratlanodik feher
+	//		{
+	//			if (j % 2 == 0)
+	//				std::cout << "# B#";
+	//			else
+	//				std::cout << "  W ";
+
+	//		}
+	//		
+	//	}
+	//	std::cout << std::endl;
+	//	color = true;
+	//	if (i % 2 == 0) {
+	//		for (k = 0; k < 8; ++k)
+	//			if (color) {
+	//				std::cout << "    ";
+	//				color = !color;
+	//			}
+	//			else {
+	//				std::cout << "####";
+	//				color = !color;
+	//			}
+	//	}
+	//	else
+	//		for (k = 0; k < 8; ++k)
+	//			if (color) {
+	//				std::cout << "####";
+	//				color = !color;
+	//			}
+	//			else {
+	//				std::cout << "    ";
+	//				color = !color;
+	//			}
+	//	std::cout << std::endl;
+
+
+
+
+/*##################################################*/
+	/*integralni az alabbi kirajzolast kulon osztalyként*/
+//	std::cout << std::endl;
+//	}
 
 	delete ujgame;
 	return 0;
