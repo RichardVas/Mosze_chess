@@ -6,5 +6,8 @@ bool Knight::checkMove(int dest_x, int dest_y) {
     if(((this->getX+1)||(this->getX-1)==dest_x && (this->getY+2)||(this->getY-2)==dest_y) || ((this->getX+2)||(this->getX-2)==dest_x && (this->getY+1)||(this->getY-1)==dest_y)){
         res=true;
     }
+    else{
+        std::cout << "rossz lepes\n";
+    }
 return res;
 }
