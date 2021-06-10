@@ -42,9 +42,9 @@ cppcheck:
 	bash -c "./cppcheck.sh"
 	
 gtest:
-	cd unit_tests && cmake CMakeLists.txt
-	cd unit_tests && make
-	cd unit_tests && ./runTests
+        cd test && cmake CMakeLists.txt
+        cd test && make
+        cd test && ./runTests
 
 documentation:
 	doxygen doxconfig
