@@ -40,6 +40,11 @@ valgrind:
 cppcheck:
 	bash -c "chmod +x cppcheck.sh"
 	bash -c "./cppcheck.sh"
+	
+gtest:
+	cd unit_tests && cmake CMakeLists.txt
+	cd unit_tests && make
+	cd unit_tests && ./runTests
 
 documentation:
 	doxygen doxconfig
