@@ -7,8 +7,8 @@
 
 TEST(King_piece,King_exists)
 {
-
-	ASSERT_EQ(1,1);
+	King kiraly = King(10,10)
+	ASSERT_EQ(kiraly.getX(),10);
 }
 
 
