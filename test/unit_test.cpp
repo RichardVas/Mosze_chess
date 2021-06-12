@@ -1,6 +1,8 @@
 #include "../JSON.h"
 #include "../Piece.h"
+#include "../Piece.cpp"
 #include "../King.h"
+#include "../King.cpp"
 #include <gtest/gtest.h>
 
 #include <fstream>
@@ -8,8 +10,9 @@
 
 TEST(King_piece,King_exists)
 {
-	
-	ASSERT_EQ(10,10);
+	Piece kiraly = King(10,10);
+	int x = kiraly.getX();
+	ASSERT_EQ(x,10);
 }
 
 
