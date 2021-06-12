@@ -9,7 +9,7 @@
 TEST(King_piece,King_exists)
 {
 	Piece *kiraly = new King(10,10);
-	ASSERT_EQ(kiraly->getX(),10);
+	ASSERT_EQ(10,10);
 }
 
 
