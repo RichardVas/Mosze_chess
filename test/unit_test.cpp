@@ -11,7 +11,7 @@
 TEST(King_piece,King_exists)
 {
 	Piece *tmp_piece = new King(1, 1);
-	int x = kiraly->getX();
+	int x = tmp_piece->getX();
 	EXPECT_EQ(x,1);
 }
 
