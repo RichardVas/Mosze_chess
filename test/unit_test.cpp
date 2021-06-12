@@ -10,9 +10,9 @@
 
 TEST(King_piece,King_exists)
 {
-	Piece *kiraly = King(10,10);
+	Piece *tmp_piece = new King(1, 1);
 	int x = kiraly->getX();
-	EXPECT_EQ(x,10);
+	EXPECT_EQ(x,1);
 }
 
 
