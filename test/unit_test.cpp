@@ -1,5 +1,5 @@
 #include "../JSON.h"
-#include "King.h"
+#include "../King.h"
 #include <gtest/gtest.h>
 
 #include <fstream>
