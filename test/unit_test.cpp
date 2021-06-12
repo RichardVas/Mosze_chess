@@ -8,8 +8,8 @@
 
 TEST(King_piece,King_exists)
 {
-	Piece kiraly = King(10,10);
-	ASSERT_EQ(kiraly.getX(),10);
+	Piece *kiraly = new King(10,10);
+	ASSERT_EQ(kiraly->getX(),10);
 }
 
 
