@@ -1,4 +1,5 @@
 #include "../JSON.h"
+#include "../Piece.h"
 #include "../King.h"
 #include <gtest/gtest.h>
 
