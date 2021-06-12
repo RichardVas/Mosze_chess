@@ -10,9 +10,9 @@
 
 TEST(King_piece,King_exists)
 {
-	Piece kiraly = King(10,10);
-	int x = kiraly.getX();
-	ASSERT_EQ(x,10);
+	Piece *kiraly = King(10,10);
+	int x = kiraly->getX();
+	EXPECT_EQ(x,10);
 }
 
 
