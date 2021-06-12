@@ -12,7 +12,9 @@ TEST(King_piece,King_exists)
 {
 	Piece *tmp_piece = new King(1, 1);
 	int x = tmp_piece->getX();
+	int y = tmp_piece->getY();
 	EXPECT_EQ(x,1);
+	EXPECT_EQ(y,1);
 }
 
 
