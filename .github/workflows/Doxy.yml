@@ -9,7 +9,7 @@ on:
 jobs:
   doxygen:
     runs-on: ubuntu-latest
-    container: richardvas/mosze:latest
+    container: richardvas/moszee:latest
     steps:
       - uses: actions/checkout@v2
       - run: doxygen doxconfig
