@@ -14,7 +14,7 @@
 # Befejezett feladatok
 
 | Feladat | | Felelős | | Reviewer | 
-| ------- |  -------- | -------- |
+| ---------------- |  --------------------------- | ------------- |
 | Initial gamestate  | @RichardVas| @RichardVas @matevarga96| 
 | In-out test | @RichardVas| @RichardVas| 
 | SCA | @RichardVas| @RichardVas | 
